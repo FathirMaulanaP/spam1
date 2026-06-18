@@ -1,0 +1,2 @@
+vectorizer = joblib.load("vectorizer.pkl")
+input_vec = vectorizer.transform([pesan])
