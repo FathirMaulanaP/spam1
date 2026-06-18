@@ -20,6 +20,10 @@ if st.button("Prediksi"):
     else:
         # Gunakan transform(), JANGAN fit_transform()
         input_vec = vectorizer.transform([pesan])
+        st.write("Shape input:", input_vec.shape)
+
+if hasattr(model, "n_features_in_"):
+    st.write("Model membutuhkan:", model.n_features_in_, "fitur")
 
         pred = model.predict(input_vec)[0]
         prob = model.predict_proba(input_vec)
